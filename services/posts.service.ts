@@ -55,10 +55,10 @@ const PostsService: ServiceSchema<PostsSettings> = {
     actions: {
         create: {
             rest: "POST /",
-            // params: {
-            //     title: { type: "string", min: 1 },
-            //     content: { type: "string", min: 1 },
-            // },
+            params: {
+                title: { type: "string", min: 1 },
+                content: { type: "string", min: 1 },
+            },
             async handler(this: PostsThis, ctx: Context<ActionCreateParams, ContextMeta>) {
                 const { title, content } = ctx.params;
 
